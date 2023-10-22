@@ -6,7 +6,7 @@ describe("Login in with invalid credentials", () => {
     cy.wait(1000);
     cy.get("#loginEmail").type("invalidCredentials@email.com");
     cy.get("#loginPassword").type("notAPassword{enter}");
-    cy.wait(100);
+    cy.get("#loginEmail");
     cy.on("window:alert", (str) => {
       expect(str).to.equal("Only Noroff student or teacher emails are valid.");
     });
